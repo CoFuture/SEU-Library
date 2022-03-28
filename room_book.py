@@ -288,24 +288,24 @@ if __name__ == "__main__":
     # check user config的合法性
     auto_book.infoCheckAndInit()
 
-    auto_book.getRoomInfo()
-    auto_book.run()
+    # auto_book.getRoomInfo()
+    # auto_book.run()
 
     # 倒计时模式
-    # while True:
-    #     now = datetime.datetime.now()
-    #     hour = now.hour
-    #     minute = now.minute
-    #     second = now.second
-    #     print(f"---wait---{hour}:{minute}:{second}")
-    #
-    #     if hour == 23 and minute == 59 and second > 45:
-    #         print("start auto book")
-    #         auto_book.getRoomInfo()
-    #         auto_book.run()
-    #         break
-    #
-    #     # 睡眠1s
-    #     time.sleep(1)
+    while True:
+        now = datetime.datetime.now()
+        hour = now.hour
+        minute = now.minute
+        second = now.second
+        print(f"---wait---{hour}:{minute}:{second}")
+
+        if hour == 23 and minute == 59 and second > 45:
+            print("start auto book")
+            auto_book.getRoomInfo()
+            auto_book.run()
+            break
+
+        # 睡眠1s
+        time.sleep(1)
 
     print("预设时间列表已经预约完成")
